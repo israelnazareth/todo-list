@@ -65,13 +65,17 @@ li:hover {
   padding: 5px 15px 5px 15px;
 }
 
+#buttons {
+  text-align: center;
+}
+
 button {
   background-color: #1B3795;
   color: #fff;
   border: none;
   text-transform: uppercase;
   box-shadow: 0 3px 2px #626987;
-  margin: 0 5px 0 5px;
+  margin: 10px 5px 0 5px;
   padding: 5px;
   border-radius: 5px;
 }
