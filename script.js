@@ -60,6 +60,7 @@ clearCompleted.addEventListener('click', () => {
 saveTasks.addEventListener('click', () => {
   const tasks = taskList.innerHTML;
   localStorage.setItem('taskList', tasks);
+  alert('Tarefas salvas com sucesso!');
 });
 
 window.onload = () => {
