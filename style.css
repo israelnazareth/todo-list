@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color: #1B3795; 
+  display: flex;
+  justify-content: center;
+  background-color: #1B3795;
 }
 
 header {
@@ -16,8 +18,9 @@ header {
 section {
   background-color: #c4daee;
   padding: 10px;
+  margin: 10px;
   border-radius: 10px;
-  margin: 1% 28%;
+  max-width: 800px;
   box-shadow: 3px 3px 10px black;
 }
 
@@ -28,7 +31,7 @@ p {
 }
 
 input, input:focus {
-  padding: 5px;
+  padding: 6px;
   border-radius: 5px;
   border: 1px solid #75a3ce;
   outline: none;
@@ -41,6 +44,8 @@ input, input:focus {
 }
 
 li {
+  color: #1B3795;
+  font-weight: 500;
   padding: 5px;
 }
 
@@ -58,7 +63,7 @@ li:hover {
 }
 
 .completed {
-  text-decoration: line-through solid #000;
+  text-decoration: line-through solid #1B3795 2px;
 }
 
 #mover-cima, #mover-baixo {
