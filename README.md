@@ -6,9 +6,7 @@
 
 ---
 
-https://user-images.githubusercontent.com/85763987/162601773-007996c6-14fb-4247-9982-e3d6312cf6c9.mp4
-
-
+https://user-images.githubusercontent.com/85763987/162847474-1e34542e-4e68-4947-ae0a-bec349a7a784.mp4
 
 ## Instruções para visualizar o projeto:
 
