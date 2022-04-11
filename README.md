@@ -8,6 +8,8 @@
 
 https://user-images.githubusercontent.com/85763987/162847474-1e34542e-4e68-4947-ae0a-bec349a7a784.mp4
 
+---
+
 ## Instruções para visualizar o projeto:
 
 1. Clone o repositório
