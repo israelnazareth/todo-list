@@ -62,7 +62,11 @@ clearCompleted.addEventListener('click', () => {
 saveTasks.addEventListener('click', () => {
   const tasks = taskList.innerHTML;
   localStorage.setItem('taskList', tasks);
-  alert('Tarefas salvas com sucesso!');
+  Swal.fire(
+    'Oba!',
+    'Tarefas salvas com sucesso!',
+    'success',
+  );
 });
 
 window.onload = () => {
@@ -78,9 +82,9 @@ button.addEventListener('click', addTasks);
 upButton.addEventListener('click', () => {
   const itemSelected = document.querySelector('.selected');
   if (itemSelected === null) {
-    alert('Nenhuma tarefa selecionada!');
+    Swal.fire('Nenhuma tarefa selecionada!');
   } else if (itemSelected === taskListItem[0]) {
-    alert('A tarefa já está no topo!');
+    Swal.fire('A tarefa já está no topo!');
   } else {
     itemSelected.parentNode.insertBefore(itemSelected, itemSelected.previousElementSibling);
   }
@@ -90,11 +94,11 @@ upButton.addEventListener('click', () => {
 downButton.addEventListener('click', () => {
   const itemSelected = document.querySelector('.selected');
   if (itemSelected === null) {
-    alert('Nenhuma tarefa selecionada!');
+    Swal.fire('Nenhuma tarefa selecionada!');
   } else if (itemSelected !== taskList.children[taskList.children.length - 1]) {
     itemSelected.parentNode.insertBefore(itemSelected.nextElementSibling, itemSelected);
   } else {
-    alert('Essa tarefa já está no fim da lista!');
+    Swal.fire('A tarefa já está no fim da lista!');
   }
 });
 
