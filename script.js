@@ -1,3 +1,5 @@
+import Swal from "/node_modules/sweetalert2/src/sweetalert2.js";
+
 const button = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
 const taskListItem = document.getElementsByClassName('item');
@@ -16,7 +18,7 @@ function addTasks() {
   const list = document.querySelector('#lista-tarefas');
   listItem.classList.add('item');
   if (!inputValue.value) {
-    alert('Insira uma tarefa, por favor.');
+    Swal.fire('Insira uma tarefa, por favor.');
   } else {
     listItem.innerText = inputValue.value;
     list.appendChild(listItem);
@@ -60,7 +62,11 @@ clearCompleted.addEventListener('click', () => {
 saveTasks.addEventListener('click', () => {
   const tasks = taskList.innerHTML;
   localStorage.setItem('taskList', tasks);
-  alert('Tarefas salvas com sucesso!');
+  Swal.fire(
+    'Oba!',
+    'Tarefas salvas com sucesso!',
+    'success',
+  );
 });
 
 window.onload = () => {
@@ -76,9 +82,9 @@ button.addEventListener('click', addTasks);
 upButton.addEventListener('click', () => {
   const itemSelected = document.querySelector('.selected');
   if (itemSelected === null) {
-    alert('Nenhuma tarefa selecionada!');
+    Swal.fire('Nenhuma tarefa selecionada!');
   } else if (itemSelected === taskListItem[0]) {
-    alert('A tarefa já está no topo!');
+    Swal.fire('A tarefa já está no topo!');
   } else {
     itemSelected.parentNode.insertBefore(itemSelected, itemSelected.previousElementSibling);
   }
@@ -88,11 +94,11 @@ upButton.addEventListener('click', () => {
 downButton.addEventListener('click', () => {
   const itemSelected = document.querySelector('.selected');
   if (itemSelected === null) {
-    alert('Nenhuma tarefa selecionada!');
+    Swal.fire('Nenhuma tarefa selecionada!');
   } else if (itemSelected !== taskList.children[taskList.children.length - 1]) {
     itemSelected.parentNode.insertBefore(itemSelected.nextElementSibling, itemSelected);
   } else {
-    alert('Essa tarefa já está no fim da lista!');
+    Swal.fire('A tarefa já está no fim da lista!');
   }
 });
 
