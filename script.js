@@ -1,3 +1,5 @@
+import Swal from "/node_modules/sweetalert2/src/sweetalert2.js";
+
 const button = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
 const taskListItem = document.getElementsByClassName('item');
@@ -16,7 +18,7 @@ function addTasks() {
   const list = document.querySelector('#lista-tarefas');
   listItem.classList.add('item');
   if (!inputValue.value) {
-    alert('Insira uma tarefa, por favor.');
+    Swal.fire('Insira uma tarefa, por favor.');
   } else {
     listItem.innerText = inputValue.value;
     list.appendChild(listItem);
