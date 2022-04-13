@@ -17,8 +17,8 @@ https://user-images.githubusercontent.com/85763987/162881214-973d75ae-2c3b-4eae-
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd todo-list`
 
-2. Instale as dependências e inicialize o projeto
-  * Instale as dependências:
-    * `npm install`
+2. Inicialize o projeto
+  * Se você quiser, instale a extensão:
+    * `Live Server` e inicialize o projeto.
 
 # Enjoy!
