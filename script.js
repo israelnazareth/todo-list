@@ -1,5 +1,3 @@
-import Swal from "/node_modules/sweetalert2/src/sweetalert2.js";
-
 const button = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
 const taskListItem = document.getElementsByClassName('item');
