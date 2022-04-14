@@ -32,9 +32,10 @@ p {
 }
 
 #texto-tarefa {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   width: 200px;
+  padding: 5px;
 }
 
 input, input:focus {
@@ -54,6 +55,7 @@ input, input:focus {
 li {
   color: #1B3795;
   font-weight: 600;
+  font-size: 20px;
   padding: 5px 15px;
 }
 
