@@ -13,6 +13,7 @@ header {
   font-weight: 700;
   text-align: center;
   color: #1B3795;
+  margin-bottom: 20px;
 }
 
 section {
@@ -27,7 +28,13 @@ section {
 p {
   color: #1B3795;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 19px;
+}
+
+#texto-tarefa {
+  font-size: 12px;
+  font-weight: 600;
+  width: 200px;
 }
 
 input, input:focus {
@@ -40,13 +47,14 @@ input, input:focus {
 #lista-tarefas {
   background-color: #d1e9ff;
   border-radius: 5px;
-  padding: 10px 20px 10px 30px;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
   color: #1B3795;
-  font-weight: 500;
-  padding: 5px;
+  font-weight: 600;
+  padding: 5px 15px;
 }
 
 li:hover {
@@ -54,7 +62,7 @@ li:hover {
 }
 
 .selected {
-  background-color: #808080;
+  background-color: #a7a7a7;
   border-radius: 2px;
 }
 
