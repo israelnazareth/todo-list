@@ -1,6 +1,6 @@
 const button = document.querySelector('#criar-tarefa');
 const taskList = document.querySelector('#lista-tarefas');
-const taskListItem = document.getElementsByClassName('item');
+const taskListItems = document.getElementsByClassName('item');
 const clearAllTasks = document.querySelector('#apaga-tudo');
 const clearCompleted = document.querySelector('#remover-finalizados');
 const saveTasks = document.querySelector('#salvar-tarefas');
@@ -18,37 +18,49 @@ function addTasks() {
   if (!inputValue.value) {
     Swal.fire('Insira uma tarefa, por favor.');
   } else {
-    listItem.innerText = inputValue.value;
-    list.appendChild(listItem);
+    let item = `<li class="item"><input type="checkbox"> - ${inputValue.value}</input></li>`;
+    list.insertAdjacentHTML('beforeend', item);
   }
   inputValue.value = '';
 }
 
 // Seleciona um único item (muda a cor de fundo para cinza)
 function selectItem({ target }) {
-  for (const value of taskList.children) {
-    if (value.classList.contains('selected')) {
-      value.classList.remove('selected');
+  for (const item of taskListItems) {
+    if (item.classList.contains('selected')) {
+      item.classList.remove('selected');
+    }
+    if(target.type === 'checkbox') {
+      classList.remove('selected');
     }
     target.classList.add('selected');
   }
 }
 
-// Marca como 'completa' a tarefa com duplo-clique
-function dblClickSelector({ target }) {
-  if (target.classList.contains('completed')) {
-    target.classList.remove('completed');
-  } else {
-    target.classList.add('completed');
+// Marca como 'completa' a tarefa selecionada
+function taskCompleted() {
+  for (const item of taskListItems) {
+    if (item.children[0].checked) {
+      item.classList.add('completed');
+    } else {
+      item.classList.remove('completed');
+    }
   }
 }
 
 // Remove todas as tarefas
-clearAllTasks.addEventListener('click', () => { taskList.innerHTML = ''; });
+clearAllTasks.addEventListener('click', () => {
+  !taskListItems.length 
+  ? Swal.fire('Não há tarefas para serem removidas.')
+  : taskList.innerHTML = '';
+});
 
 // Remover tarefas completadas (riscadas)
 clearCompleted.addEventListener('click', () => {
   const completeds = document.querySelectorAll('.completed');
+  if (!completeds.length) {
+    Swal.fire('Não há tarefas finalizadas.');
+  }
   for (const tasks of completeds) {
     if (tasks.classList.contains('completed')) {
       tasks.remove();
@@ -73,7 +85,7 @@ window.onload = () => {
 };
 
 taskList.addEventListener('click', selectItem);
-taskList.addEventListener('dblclick', dblClickSelector);
+taskList.addEventListener('click', taskCompleted);
 button.addEventListener('click', addTasks);
 
 // Mover a tarefa para cima
@@ -81,7 +93,7 @@ upButton.addEventListener('click', () => {
   const itemSelected = document.querySelector('.selected');
   if (itemSelected === null) {
     Swal.fire('Nenhuma tarefa selecionada!');
-  } else if (itemSelected === taskListItem[0]) {
+  } else if (itemSelected === taskListItems[0]) {
     Swal.fire('A tarefa já está no topo!');
   } else {
     itemSelected.parentNode.insertBefore(itemSelected, itemSelected.previousElementSibling);
@@ -102,6 +114,10 @@ downButton.addEventListener('click', () => {
 
 // Remove a tarefa selecionada (com o fundo cinza)
 clearSelected.addEventListener('click', () => {
+  const itemSelected = document.querySelector('.selected');
+  if (itemSelected === null) {
+    Swal.fire('Nenhuma tarefa selecionada!');
+  }
   for (const task of taskList.children) {
     if (task.classList.contains('selected')) {
       task.remove();
