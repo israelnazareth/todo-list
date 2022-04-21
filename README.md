@@ -3,7 +3,7 @@
 ## O que foi desenvolvido
 
 - Foi desenvolvida uma lista de tarefas usando `HTML`, `CSS` e `JavaScript`.
-- Link da aplicação: https://yours-todo-list.vercel.app/
+- Link da aplicação: https://your-todo-list.vercel.app/
 
 ---
 
